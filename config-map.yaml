@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bm-app-config
+data: 
+  APP_DEV: dev
+  APP_PROD: prod 
