@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bm-webapp-1
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    ports:
+      - containerPort: 8080
+    envFrom:
+      - configMapRef:
+           name: bm-app-config
