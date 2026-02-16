@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: bm-webapp-1
+spec:
+  containers:
+    - name: bmwebapp1
+      image: nginx:latest
+      ports:
+       - containerPort: 80
+      envFrom:
+        - secretRef: 
+             name: secret-example
