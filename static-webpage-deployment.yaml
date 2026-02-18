@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-website-deployment
+spec:
+  selector:
+    matchLabels:
+      app: static-website
+  replicas: 1 # Run a single pod instance
+  template:
+    metadata:
+      labels:
+        app: static-website
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine # Use a lightweight NGINX image
+        ports:
+        - containerPort: 80 # The port the container exposes
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: static-website-service
+spec:
+  selector:
+    app: static-website # Matches the labels in the Deployment template
+  type: LoadBalancer # Exposes the service externally (use NodePort for local testing)
+  ports:
+  - protocol: TCP
+    port: 82 # The port the Service exposes
+    targetPort: 80 # The port on the Pod to target
+
