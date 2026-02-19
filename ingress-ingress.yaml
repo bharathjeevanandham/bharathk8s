@@ -8,7 +8,7 @@ metadata:
     # redirect HTTP → HTTPS automatically
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: ingress
   tls:
     - hosts:
         - lab.local
