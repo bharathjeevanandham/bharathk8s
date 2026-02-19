@@ -4,6 +4,7 @@ kind: Pod
 metadata: 
   name: bm-webapp-1
 spec:
+  serviceAccountName: bm-app
   containers:
     - name: bmwebapp1
       image: nginx:latest
