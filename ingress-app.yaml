@@ -1,0 +1,69 @@
+# ── FRONTEND ────────────────────────────────────────
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          command: ["sh","-c"]
+          args:
+            - "echo '<h1>🎨 Frontend Service</h1><p>You hit /app</p>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+---
+# ── API ─────────────────────────────────────────────
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: httpd:alpine
+          ports:
+            - containerPort: 80
+          command: ["sh","-c"]
+          args:
+            - "echo '<h1>⚡ API Service</h1><p>You hit /api</p>' > /usr/local/apache2/htdocs/index.html && httpd-foreground"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-svc
+spec:
+  selector:
+    app: api
+  ports:
+    - port: 80
+      targetPort: 80

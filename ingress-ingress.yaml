@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lab-ingress
+  annotations:
+    # strip /app and /api prefix before sending to backend
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # redirect HTTP → HTTPS automatically
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - lab.local
+      secretName: lab-tls   # ← the secret from Step 3
+  rules:
+    - host: lab.local
+      http:
+        paths:
+          - path: /app(/|$)(.*)    # matches /app and /app/anything
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: frontend-svc
+                port:
+                  number: 80
+          - path: /api(/|$)(.*)    # matches /api and /api/anything
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: api-svc
+                port:
+                  number: 80

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: monitor-pod
+  namespace: prod
+spec:
+  serviceAccountName: monitor-sa   # use our dedicated SA
+  containers:
+    - name: monitor
+      image: curlimages/curl          # lightweight curl image
+      command: ["sleep", "3600"]
