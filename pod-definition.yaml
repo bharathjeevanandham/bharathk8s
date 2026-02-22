@@ -4,11 +4,13 @@ kind: Pod
 metadata:
   name: bm-webapp-1
 spec:
+  nodeSelector:
+    hardisk: ssd
   containers:
-  - name: ubuntu
-    image: ubuntu
+  - name: nginx
+    image: nginx:latest
     ports:
-      - containerPort: 8080
+      - containerPort: 80
     envFrom:
       - configMapRef:
            name: bm-app-config
