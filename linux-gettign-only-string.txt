@@ -1,1 +1,4 @@
-name=bharath phone=822045415 address=9501
+name bharath phone 822045415 address 9501
+
+answer:
+cat linux-gettign-only-string.txt | awk {' print $6 '}
