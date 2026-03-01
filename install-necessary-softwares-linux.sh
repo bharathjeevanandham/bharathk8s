@@ -1,19 +1,58 @@
-apt install ./google-chrome-stable_current_amd64.deb 
-    5  apt install docker
-   15  apt install xserver-xorg-video-intel intel-gpu-tools mesa-utils
-  143  apt install git
-  155  apt install kind
-  156  apt install kubectl
-  157  sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl gpg
-  163  sudo apt-get install -y kubectl
-  170  apt install docker.io -y
-  215  apt install net-tools vim nfs-utils
-  216  apt install net-tools vim 
-  297  apt install helm
-  337  sudo apt install ./teamviewer_amd64.deb
-  347  apt install openssh-server
-  570  apt install at -y
-  576  apt install traceroute -y
-  579  apt install nmap -y
-  582  apt install iotop -y
+#!/bin/bash 
+#written by Bharath Jeeva on 2026-02-28
+
+#install updates and certs
+apt-get update
+apt-get install -y apt-transport-https ca-certificates curl gpg
+
+#install openssh-server
+apt install openssh-server -y
+
+#step: install basic tools like traceroute, at, nmap, iotop, htop, vim, netstat
+apt install traceroute at nmap iotop htop gzip locate vim  -y
+
+#install docker, kind
+apt install docker.io kind
+
+#install Git
+apt install git -y
+
+#git auth
+
+ls -al ~/.ssh
+
+#set -x # start debugging
+#check the folder for exiting key before creating key 
+KEY_PATH="$HOME/.ssh/ed25519"
+if [ -f "$KEY_PATH" ]; then
+	echo "key already exist in $(whoami)@$(hostname)"
+else 
+	echo "generating new key on $(date)"
+	ssh-keygen -t ed25519 -f "$KEY_PATH" -N "" -C "bharath814@gmail.com" -q
+	echo "new key generated, check in "$KEY_PATH" location"
+fi
+chmod 600 "$KEY_PATH"
+chmod 600 "$KEY_PATH.pub"
+
+git config --global user.email "bharath814@gmail.com"
+git config --global user.name "Bharath Jeeva"
+ssh -T git@github.com
+git clone https://github.com/bharathjeevanandham/bharathk8s.git
+git status
+
+#install kubectl
+apt-get install kubectl -y
+
+#install 
+#apt install 
+
+#install helm
+apt install helm -y
+
+#download and install chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+chmod +x ./google-chrome-stable_current_amd.deb
+apt install ./google-chrome-stable_current_amd.deb
+
+
 
