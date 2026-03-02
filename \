@@ -55,7 +55,6 @@ chmod +x ./google-chrome-stable_current_amd.deb
 apt install ./google-chrome-stable_current_amd.deb
 
 #install terrraform
-
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
 gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
@@ -63,5 +62,5 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashi
 apt update
 apt install terraform
 if [ $? = 0 ]; then
-	echo "terraform installed"
+	echo "terraform installed successfully"
 fi
