@@ -1,0 +1,26 @@
+#/bin/bash
+#date 2026-03-06
+
+kubectl apply -f ./webapp-3pods.yaml
+kubectl apply -f ./config-map.yaml
+# kubectl apply -f volume.yaml
+# kubectl apply -f volume-pvc.yaml
+# kubectl apply -f pod-with-volume.yaml
+# kubectl apply -f storageclass-local-path.yaml
+kubectl apply -f no-toleration-pod-alpine.yaml
+kubectl apply -f secret-mysql-statefulset.yaml
+kubectl apply -f mysql-statefulset.yaml
+kubectl apply -f nodesecltor-nginx-prod.yaml
+kubectl apply -f nodesecltor-nginx.yaml
+kubectl apply -f ingress-app.yaml
+kubectl apply -f ingress-deploy.yaml
+kubectl apply -f ingress-ingress.yaml
+
+#Postgres config
+echo "current working direcoty is $(pwd)"
+./postgres/postgres-bootstrap.sh
+if [ $? = 0 ]; then
+	echo "postgres started successfully"
+else
+	echo "Error in postgres start, plese investigate"
+fi

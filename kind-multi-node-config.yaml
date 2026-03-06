@@ -44,3 +44,12 @@ nodes:
     nodeRegistration:
       kubeletExtraArgs:
         node-labels: "node-type=database,environment=production,zone=zone-c,storage=ssd"
+
+# Worker node 4 - Database2
+- role: worker
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "node-type=database,environment=production,zone=zone-c,storage=ssd"
