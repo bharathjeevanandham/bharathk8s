@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: postgres
+spec:
+  serviceName: postgres  # Headless service for stable DNS
+  replicas: 2
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:16
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: bm
+        - name: POSTGRES_USER
+          value: oasprod
+        envFrom:
+          - secretRef:
+               name: secret-postgres-statefulset  
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:  # Each pod gets its own PVC
+  - metadata:
+      name: postgres-storage
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: standard  
+      resources:
+        requests:
+          storage: 2Gi
