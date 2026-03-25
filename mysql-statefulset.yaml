@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: alpine-mysql
+        image: mariadb:11.4
         ports:
         - containerPort: 3306
         envFrom:
@@ -32,4 +32,4 @@ spec:
       accessModes: ["ReadWriteOnce"]
       resources:
         requests:
-          storage: 10Gi
+          storage: 3Gi
