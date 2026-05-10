@@ -1,0 +1,6 @@
+neo4j:
+  edition: community
+  name: my-neo4j
+volumes:
+  data:
+    mode: "defaultStorageClass"
