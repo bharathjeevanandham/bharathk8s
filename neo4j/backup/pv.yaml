@@ -1,0 +1,14 @@
+# backup-pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-neo4j-backup
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  hostPath:
+    path: /data/neo4j/backups   # make sure this dir exists on the node

@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: neo4j-backup
+  namespace: neo4j
+spec:
+  schedule: "05 18 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          securityContext:
+            runAsUser: 7474      # run as neo4j user, not root
+            runAsGroup: 7474
+          containers:
+          - name: neo4j-backup
+            image: neo4j/neo4j-admin:2026.04.0
+            command:
+            - /bin/bash
+            - -c
+            - |
+              BACKUP_DIR="/backups/$(date +%Y-%m-%d)"
+              mkdir -p $BACKUP_DIR
+              neo4j-admin database dump neo4j --from-path=/data/monitoring --to-path=$BACKUP_DIR
+              echo "Backup completed: $BACKUP_DIR"
+              # cleanup: keep only last 7 days
+              find /backups -maxdepth 1 -type d -mtime +3 -exec rm -rf {} +
+            volumeMounts:
+            - name: backup-storage
+              mountPath: /backups
+          restartPolicy: OnFailure
+          volumes:
+          - name: backup-storage
+            persistentVolumeClaim:
+              claimName: backup-neo4j
