@@ -1,0 +1,14 @@
+# prometheus-server-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-server
+  namespace: prometheus
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  volumeName: prometheus-server   # bind directly to your existing PV
+  storageClassName: ""            # empty string = no storageclass, manual binding
