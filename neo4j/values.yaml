@@ -4,3 +4,13 @@ neo4j:
 volumes:
   data:
     mode: "defaultStorageClass"
+env:
+  NEO4J_AUTH: neo4j/7D7D68D
+
+config:
+  server.memory.heap.initial_size: 512m
+  server.memory.heap.max_size: 512m
+  server.memory.pagecache.size: 512m
+
+securityContext:
+  fsGroup: 7474

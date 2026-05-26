@@ -1,8 +1,7 @@
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-general-rwm-2
+  name: pvc-general-rwm
 spec:
   accessModes:
     - ReadWriteMany

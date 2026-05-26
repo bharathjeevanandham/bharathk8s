@@ -1,0 +1,13 @@
+headlamp - http://192.168.2.100:8080
+guestbook app - http://192.168.2.100:8081
+
+vault login -
+
+redis web console - 
+
+qualys login- 
+
+harbor login - harbor.unicorn.local
+harbor passwd - 713B90F$1F004
+ingress-nginx nodPort 10.101.175.111:32457
+harbor core.harbor.domain

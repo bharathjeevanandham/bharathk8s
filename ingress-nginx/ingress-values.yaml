@@ -1,0 +1,7 @@
+controller:
+  kind: DaemonSet # Ensures an ingress instance runs on worker nodes for redundancy
+  service:
+    type: NodePort
+    nodePorts:
+      http: 30080
+      https: 30443
