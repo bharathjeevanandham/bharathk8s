@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: neo4j-backup
+  namespace: neo4j
+spec:
+  restartPolicy: Never
+  containers:
+  - name: backup
+    image: alpine:latest
+    command: ["sh", "-c"]
+    args:
+      - |
+        echo "Backing up Neo4j data..."
+        tar czf /backups/neo4j-data-$(date +%F_%H%M%I).tar.gz -C /data/databases/neo4j .
+        echo "Backup complete"
+    volumeMounts:
+    - name: data
+      mountPath: /data
+    - name: backup
+      mountPath: /backups
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: data-my-neo4j-0
+  - name: backup
+    persistentVolumeClaim:
+      claimName: neo4j-backup-pvc
+

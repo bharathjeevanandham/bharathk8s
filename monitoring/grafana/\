@@ -1,0 +1,31 @@
+persistence:
+  enabled: true
+  existingClaim: grafana-data-pvc
+  storageClassName: local-path
+  size: 5Gi
+
+extraContainers: |
+  - name: grafana-backup
+    image: alpine:latest
+    command: ["/bin/sh", "-c"]
+    args:
+      - |
+        while true; do
+          TIMESTAMP=$(date +%F_%H%M%S)
+          cp /var/lib/grafana/grafana.db /backup/grafana-${TIMESTAMP}.db
+          gzip /backup/grafana-${TIMESTAMP}.db
+          find /backup -type f -mtime +7 -delete
+          sleep 86400
+        done
+    volumeMounts:
+      - name: storage
+        mountPath: /var/lib/grafana
+        readOnly: true
+      - name: grafana-backup-pvc
+        mountPath: /backup
+
+extraVolumes: |
+  - name: grafana-backup-pvc
+    persistentVolumeClaim:
+      claimName: grafana-backups-pvc
+

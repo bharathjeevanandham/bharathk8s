@@ -1,9 +1,17 @@
 neo4j:
   edition: community
   name: my-neo4j
+
 volumes:
   data:
-    mode: "defaultStorageClass"
+    mode: dynamic
+    dynamic:
+      storageClassName: local-path
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 5Gi
+
 env:
   NEO4J_AUTH: neo4j/7D7D68D
 
@@ -14,3 +22,4 @@ config:
 
 securityContext:
   fsGroup: 7474
+

@@ -1,0 +1,27 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: gitlab-runner-backup-role
+  namespace: grafana
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "pods/exec"]
+    verbs: ["get", "list", "create", "delete","watch"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: gitlab-runner-backup-binding
+  namespace: grafana
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: gitlab-runner
+roleRef:
+  kind: Role
+  name: gitlab-runner-backup-role
+  apiGroup: rbac.authorization.k8s.io

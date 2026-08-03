@@ -1,0 +1,10 @@
+volumes:
+  data:
+    mode: dynamic
+    dynamic:
+      storageClassName: local-path
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 5Gi
+

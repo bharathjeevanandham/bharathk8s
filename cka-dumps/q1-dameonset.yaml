@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-kusc00201  
+  labels:
+    app: daemon-app
+spec:
+  selector:
+    matchLabels:
+      app: daemon-app
+  template:
+    metadata:
+      labels:
+        app: daemon-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
