@@ -1,0 +1,12 @@
+expose:
+  type: ingress
+  ingress:
+    className: nginx
+    controller: default
+    hosts:
+      core: homelab.dev
+    tls:
+      enabled: true
+      certSource: auto
+
+externalURL: https://homelab.dev

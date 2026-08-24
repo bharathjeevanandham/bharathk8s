@@ -1,0 +1,1693 @@
+---
+# Source: harbor/templates/core/core-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-release-harbor-core
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+  secretKey: "bm90LWEtc2VjdXJlLWtleQ=="
+  secret: "bVVIVGQxS1d3RTFOUnJCWQ=="
+  tls.key: "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBcXZnRUxBMGZYMkJ2RnhhRkg2T1ptcnUzUUphV0ptcnNCS0krWHA3Y2drSWNpUWM4CmZLWi9kQXk2R01CVERDWVdtYWtaaXpYdjRjTU5TNmhZTzBGSDBNMUVZMU5nNVU5ZDRPL05MSVdLbUFtdVVhQ3oKT2o5dEVGWjZBUkFUWnp0RWQyMnZ0bDF1VGFoNVorb1dzcVBiZnEzS1RnRHZrV3pEYWF5WkVNVTNvcUJaYUxtMQpuVnhFdHo5bFZ2WFpMSm1hMDRQMStMN1IyRzF4M0prMDd1blhuc1ZWY3Q0bkZVMVFSbEhKTUgzS2N2Mm54UElzClZ6bnVpdzFqOXhiRUs1eWdXRTQ2N21ISTRiaUd0MVJUMjVhNXRJVnlVU1YzNHRHZTFhYnJOUmVFTEI2U3E3T1QKRm41RklEY2d5WlptRWFMZlcycXJqVUtYU2pGYjk2cXZRR2NTSXdJREFRQUJBb0lCQUF0SER1ZGsralBOWmFhTgpPcnpLaXVCVkQ1SjRISEZ1VGlGRUhuOFpWWXhXRmhISDQycUpoUkMvb2lydHpNeVpXcFpLUEVBZGo3UkJySWZZCkUvSGNyWU1OZHp4aURKc3pzQXFkWnRoUCtzTnFxQkFFWEs0ejd0ck1DWUkyY0VFMy9KMHdKQTRRZmEwcnRzNXUKOTQ1VEZyQjFnRW5DOEFxVXRSTXNhbkJid2Y2OUgxOUsrMU9LNVJZMVFMclhZd1BFZDc5QUtpenljVVZSR083MgpDWW1iUDhzZVlzSzFFalIxU244QUZNRzhOTFJrVkZsaWlkejkxcjBMT2tsY1JxQnNEMnh2L2VhL25mVlAwejNxCjJXYnBWMkU4L0ZNRzloTEQ1WS9paEJnN3JSVHdVeDFLKzR0SzE1c3hVUllMRlRmL1Y0VzV1Y3pkN05sZ0JlV1MKK2xBTG51a0NnWUVBdzdSQ3dHdUVFM09BMElHelZ0VU0rN1AvRWlTWS9NK0EzVkFFeGc0dlQ5eXJuVHd0bWUwdwo0RGtiSmRzLzl6ajd5VW0wYlJVRVZSSkFIbmJicENKMi9JMEZxbFBSamxZampYUTdEc2lKanZIanJNdWtIZ29ZCkVDVDJMYiszTWNON0ZnRHhzS3B6L2JFVi9YamlCQllPQnprcFpkOVdWNnplU2VKVkJ3KzlmZmNDZ1lFQTM2VFAKWkp5NFd1T04yVGx6TWVvbEUrci9jajNmOFI1VzNLeGh0bjVoUTlBdkM1WldQN29zUUd4SW1IS2RyRmdXalRFYgpVNkM5T1pyTGlOczNSdGRzSGxpY3oreGZSYzBINGgrQTBzd3V1Zm1CWjdnZXNBWnhhUXBYand2YzlScVFwd2ZYCnI3Y0w4WEtDYXJZRVQ4eEt5bk5QVmNCcVNCQ2hPUFJNWGMrTWNqVUNnWUVBaW9XcFNmSFFSc1JXeFQ5STVZbGYKNnpsNHJpcmhidkNoVWdVMW04cW1pbXl6dkZQQUkxZlVaS0dIS2NDTEFqNS9XZmFsa3lCeE5KWDZkSlhFMmVUYgpPOS9GeHM0VlloNXVnODFsa0EwNThNZ2VVMHpCR2RJalBpb3JaaTV4U1BRSXg0WmJqS1RaL1JPL2NPNkRiRWtBCkhQVEU3S3FzdnRwSmJScWEvS2lUZy9rQ2dZQnRHM1hHeXlLeHpOUjJScTNwaXliZHFjZElEK0hDTzUvNjl1cVEKNHVWRzlUa09lU0RJNUdZVVkvK2l5RUFlUmJkeTJLTlJVRmtnMG1FNytsN2tZOUt1bDJLaG1kcjlMY01MMFh6QwoyclJ0TE1teU5VUmJjamxBR3JpTzVDVy9PbCtaN1p5UGNFa1dXVnhBL1YzckpHclVqQjhIWWVFNEdVemVnV2tFClYyNVloUUtCZ0dXd0laRTUvdWo3bzR5REYvYVF0ZjNQTUp1YnZXc09tbE5BZ0xsV2FIeTluUjRxc1BvR3l3TFEKTW9nNG1NTTdDM1VTOHlYSzV5cDlWVW41VmhXN2lNRkpjKzlKeG1uelZxVkVuclQ0VFRLcEEvcWFYbGE0V3NibwpCOVExdlBVVHhWQVowcWd2M3k0Y0lLNHAydVVYd2c1WFFvQS9RMFl3NGwwZ3FIK2lXRm5UCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg=="
+  tls.crt: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURIekNDQWdlZ0F3SUJBZ0lRV1FQT3JOWkdsSitLMlFSK2dnbjJ3akFOQmdrcWhraUc5dzBCQVFzRkFEQWEKTVJnd0ZnWURWUVFERXc5b1lYSmliM0l0ZEc5clpXNHRZMkV3SGhjTk1qWXdPREV3TURRMU9ESXlXaGNOTWpjdwpPREV3TURRMU9ESXlXakFhTVJnd0ZnWURWUVFERXc5b1lYSmliM0l0ZEc5clpXNHRZMkV3Z2dFaU1BMEdDU3FHClNJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUNxK0FRc0RSOWZZRzhYRm9VZm81bWF1N2RBbHBZbWF1d0UKb2o1ZW50eUNRaHlKQnp4OHBuOTBETG9Zd0ZNTUpoYVpxUm1MTmUvaHd3MUxxRmc3UVVmUXpVUmpVMkRsVDEzZwo3ODBzaFlxWUNhNVJvTE02UDIwUVZub0JFQk5uTzBSM2JhKzJYVzVOcUhsbjZoYXlvOXQrcmNwT0FPK1JiTU5wCnJKa1F4VGVpb0Zsb3ViV2RYRVMzUDJWVzlka3NtWnJUZy9YNHZ0SFliWEhjbVRUdTZkZWV4VlZ5M2ljVlRWQkcKVWNrd2ZjcHkvYWZFOGl4WE9lNkxEV1AzRnNRcm5LQllUanJ1WWNqaHVJYTNWRlBibHJtMGhYSlJKWGZpMFo3VgpwdXMxRjRRc0hwS3JzNU1XZmtVZ055REpsbVlSb3Q5YmFxdU5RcGRLTVZ2M3FxOUFaeElqQWdNQkFBR2pZVEJmCk1BNEdBMVVkRHdFQi93UUVBd0lDcERBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUlLd1lCQlFVSEF3SXcKRHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVSE9DS251WXI2enloaEh1WDloNHFZSmluTlRndwpEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRitOayt3clhUekNta0dpOHZzajR0enZpNFlZQUs1RjNjT2hsRm1pCjhheS94UDY4angrbDU1NHFGRCtEVkZYeTFzNHcvdE5zUFpVZGVsREZtVDJUbms2bHVkNFVZNWUvKzk2U3V0K3QKMEszN094VmFFRUtIZkZqQ1dkMkdGNmZtSXAxVHhqRHFLS2ZOZDJYaDJ0a0gxbFVrWE4yUTFXdWRwV2YrYXpBUQpxWFkvWCtOMGErWGpaTzd3VXVGMzE1VTlFVWVrUlpHMENvL1luQWpYWXp2WitzQVlSLzVTeGUzTWZGNE9CTUFxCklLSWRsb1hxVE5jVzJOaEo5K0UwOU8wZkFpM0xldmE4OGdYK1c4ZEJ1Q0t5SlZxU1RhOXJQV3V2cWxjeDE5MGYKU2dWRDdkS1lRWFR2TFJMUlREdkpuWVA1T1IycFh4ckN6M0ltZDdpL1pWQ003Sjg9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+  HARBOR_ADMIN_PASSWORD: "SGFyYm9yMTIzNDU="
+  POSTGRESQL_PASSWORD: "Y2hhbmdlaXQ="
+  REGISTRY_CREDENTIAL_PASSWORD: "aGFyYm9yX3JlZ2lzdHJ5X3Bhc3N3b3Jk"
+  CSRF_KEY: "U04wN0dEa3MyQzY2OWplSmVRV3VnSmFMaHUydWNtWnM="
+---
+# Source: harbor/templates/database/database-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "my-release-harbor-database"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+  POSTGRES_PASSWORD: "Y2hhbmdlaXQ="
+---
+# Source: harbor/templates/ingress/secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "my-release-harbor-ingress"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: kubernetes.io/tls
+data:
+  tls.crt: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURMVENDQWhXZ0F3SUJBZ0lSQVBHWUJCL2VoMGlZdFNMSzkyUWUwUjR3RFFZSktvWklodmNOQVFFTEJRQXcKRkRFU01CQUdBMVVFQXhNSmFHRnlZbTl5TFdOaE1CNFhEVEkyTURneE1EQTBOVGd5TWxvWERUSTNNRGd4TURBMApOVGd5TWxvd0ZqRVVNQklHQTFVRUF4TUxhRzl0Wld4aFlpNWtaWFl3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBCkE0SUJEd0F3Z2dFS0FvSUJBUUNjRWtsWWlZNG40WTZ0S3VvSkprNGk3Nkh5eTQ5YXhmK3FXRlVPYVdMeWJZN1YKR2VsbGlwOHk1anBuTDRXUE43V0x2emo2SlY3YXNJL0I5dnk3YkNDVHpmSm1Yd0RKaFBIZDVVTU9tK0Z3SmNmdQpNSERIR053NXZGSXl5VDM0M0F5dzZnbEpBMmYzTlZGSCs2Y3BJWmhYa3JIcVVtQ2IzQkxKTkpVeXZKbUR0aDFvCll6RHRFVWZBVFk0S1VBZWROb2Z3SDBwWGNMalBiZE80Mnk3Nm9weCsxaGU4MHV4Y0puR3BLRjgzeXZHbjBoaSsKd09ZSzhYbWFROHRRRkFKaXp3RWJXdHpPRlhyV1F6aHNMVU9LL2ZSOWNFaUxpb0prRktJSVk3QnQ2QVBiT21NVQpZaXA4Wk8zWHpwbGpQbjhDMTNHblVOYnlHSXQ0eHAxT2FwelVPejdqQWdNQkFBR2plREIyTUE0R0ExVWREd0VCCi93UUVBd0lGb0RBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUlLd1lCQlFVSEF3SXdEQVlEVlIwVEFRSC8KQkFJd0FEQWZCZ05WSFNNRUdEQVdnQlJrdlVNeFFINWZRWTB0T3NodFdiWmFNaFhvcGpBV0JnTlZIUkVFRHpBTgpnZ3RvYjIxbGJHRmlMbVJsZGpBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQVhhakg1VG9ZK1RRVFFTbTJCczlJCnFDeWdCUExsbWU4TXBSUkZRYzlaSkwzNStjQWtHOXpubmVvRWpsUFFQeWFNUFNuSEpMSjg4QldGb3c5bmc5QkYKL2x4V0FtZ01ZaTh3a0p6cE1tRTRVSnRmWHNhWG0xb1gyOWhNWUNxT295R2cvS093cWJtc3ZNVG5SNDZCYjJlLwpRalNYVUU2VWM4NUN2RmRxd01RSWxSMXFDM0VmbUFDbzZ2VldVSW1ndVhTUE5aa2RnM293bWRyNmYycUZwMVpICjloQ0NHNExnOWRKZUNvam5ka2k2M2hrTTNLZHI2cVlGbnhtOVZ6ODhYU3Jja1oxNk1jSnhBaEdPR3o0YjhSeTYKeFcyTXdyVWo2aUhSUjY4Ukp2K0hZa2dpZXhTNDUwTDhQYWV0QWJzZE1Da2hBRmVBSFdweGt6d3o3emxOZ2YvVApDUT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+  tls.key: "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBbkJKSldJbU9KK0dPclNycUNTWk9JdStoOHN1UFdzWC9xbGhWRG1saThtMk8xUm5wClpZcWZNdVk2WnkrRmp6ZTFpNzg0K2lWZTJyQ1B3ZmI4dTJ3Z2s4M3labDhBeVlUeDNlVkREcHZoY0NYSDdqQncKeHhqY09ieFNNc2s5K053TXNPb0pTUU5uOXpWUlIvdW5LU0dZVjVLeDZsSmdtOXdTeVRTVk1yeVpnN1lkYUdNdwo3UkZId0UyT0NsQUhuVGFIOEI5S1YzQzR6MjNUdU5zdStxS2NmdFlYdk5Mc1hDWnhxU2hmTjhyeHA5SVl2c0RtCkN2RjVta1BMVUJRQ1lzOEJHMXJjemhWNjFrTTRiQzFEaXYzMGZYQklpNHFDWkJTaUNHT3diZWdEMnpwakZHSXEKZkdUdDE4NlpZejUvQXRkeHAxRFc4aGlMZU1hZFRtcWMxRHMrNHdJREFRQUJBb0lCQUFkUU9BMmxESHRENzRxZgp5eTI0bE1yQVRlZHhzSHNCY2pTS1JSb1N5Q2N5Q1JKbFQzR0pxR0liTmJ0bUY2MFpZREYzT1hWSFVRV1FabndoClZjQjJsYVEzYjFkcXRqKzdNaFpDeXZ5aFExUWRBUnhoT3JlcHE1QXRDZkVGU3hraFBwci9ySVcyV2lYVVlzV3IKdmk2SU8zcEhEbjA3ZFBsNHU0eWdJU21xZXNzWUo5TldzdEE1c2txSDFwVldvUEt2YWJ3ekJpeDNYNU03amlFNwpFbTN1Ym01cHRGRW1mTU9BMVcyMkY3eVNlVVBzWFF6QUlhQUxZNUVWODdLRnJpZmo5VmdVN1dDUzVGYURSY2MrCkFsWGpVSUhuWGRBUU1MS2plOGc2OGlkTWN6M3E3WVIwZUcwajNTbi9rTmllaWNOcVdwcWdsTDNZTTdRMXNpZHkKbFllSEd5RUNnWUVBd0V6bWZVUWlJdlBLUG1PZ0Fva1hHV283dllNOGpEQVJ0T0xvdnBhdFg4NUFicTBrUTVUNgpCcCtjbnNBdjFkakJKZVI4UXJQOTVPbXNPN0Q5eENMaEUzRXNGN2YyU1o3RTRlbjJZaGx3emdxeWdPVGFQVlM4CmtBdFVmWEs5U241cmxHOHVZNWlUcGNHM3gxaGJtTjJDY2RhNmw5M3dreDk1a0NDUm82eEFoeE1DZ1lFQXo4VXEKVkRmd0x6TXp4cGQva0VPeEJ3V0lwL2FyWUZhOTlKYitPSjg5Slp5bWNEaTJRSlFHRS9hcHVXalZaQ0gxRzhYcAp2bXJLUkRVWGlaUjM5KzNrcCtPREY2ZWxrNkc2S3A0OXdGdW9JRUxuSm5yQjRQVlNDSUpnSERRTlFMV1NsYTJmClo3bUhrTW5BNDRobEtOYUw3cVRqL2JCTGhQR1JOY09BWE8zb1V2RUNnWUVBa0h2M0hoMklMSXpSNDBpRlhBSlcKK2NDSS9GNVRxdDBmSUxMd3Z1cUZmNXQvYStqcGUyRys3aVVVejI2RlFuNm11T3JRdG1sNGxYdEE3bVNRZHNMaQpLL0ozZDZiQUJSYW14VHM5NVAxS2RYVXlJNGhQdFk4cVVteEE0alRJcHVVUHZhby94NU5ITkY2MXo3REN1YnVOCkhDMkRhMEhWVlNWcjkrK1FuZEo1ZFVNQ2dZRUF4MnR3Q0d1MGJpbFAvY0gxbjB0Smcvck13cUpndFZRc2VMSGcKaWdwVlQxOSs1T0dhRkh1L0piUXdEWlRRbEk1L1MwdjM0VnR3am0wRERYdGlkcVp3UExDRFo5WHlkN1BZRXdYVgpNV2NJQlFjU0EvMzVUdWxIOW9Ea3JNMU5GeG52K3hndGt3b2hVMWhDZW1HMDdyQ1dtTlROTy9iVlZXSGpSVjVECk8yN2grWkVDZ1lCUk1DQ1ZLdURySkptMEtydlh3ZFUzdC9sU1R5OHB0UkJ1SlovU3VWWkpRUk1nLzE5KzlQNi8KQ2lpUEtLLzlhd1Vhc291empaRWRZK3liclFvMHFMTXZwTm9KU1pVeGdaZ3Z0c3N4YjMycko3cjVpclhmNC9XTwptdmtKNmlSb0NoZzk4SnQ2Nm1JRzU2blJYaFE4S1ROZmdycVRzRWwwKzBvME4xNURxT0s1d2c9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo="
+  ca.crt: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURGRENDQWZ5Z0F3SUJBZ0lSQUxFTVNjRG8zTzBpdWtyUmNhclhQYWd3RFFZSktvWklodmNOQVFFTEJRQXcKRkRFU01CQUdBMVVFQXhNSmFHRnlZbTl5TFdOaE1CNFhEVEkyTURneE1EQTBOVGd5TWxvWERUSTNNRGd4TURBMApOVGd5TWxvd0ZERVNNQkFHQTFVRUF4TUphR0Z5WW05eUxXTmhNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DCkFROEFNSUlCQ2dLQ0FRRUFzSUUxemt4WXMzYkp3ME91SW9aZUVaV1p2TU16WlM0VHJWZ0V5Ymp5dGRyeit1VDkKdGpta2dRZjdOYTl6WXBINW9MRmY1MTRPQXZFUlpicE1mczVtY2hQZmVBdDVQeVBWOHp6WFczWmNPQnc2ZnNNRAp3aEF6YlI0ejhpMXpRdTkrRlVrV0EyeGg5aThSMXVvNE9kS1N0RzJ2Z1JjTW81RnRFSG1IU3pXc1FFS1kxUHpoCmVEUnAvakVBY0huOXlSclBuaDlGRDkyc0VEdGptZFllTUlWOUQrZkRJY1RZYmZnTXdROUZLNDhLUWxadmlyMG0KQUtwc0JaM1cxOXQ2QmphTUNrM3M1elpkT2hVRkMrSEtXald3NUZhZVVEUlpCSU0vVEMrNnlNbjZBOURHUmhURQppK01oeStJY2c0ZnVNSHZIWlpWSFZ0MlpySXp0Um1OZUx2NXI1d0lEQVFBQm8yRXdYekFPQmdOVkhROEJBZjhFCkJBTUNBcVF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01BOEdBMVVkRXdFQi93UUYKTUFNQkFmOHdIUVlEVlIwT0JCWUVGR1M5UXpGQWZsOUJqUzA2eUcxWnRsb3lGZWltTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQVJPSW4rU2liNUVJUDVwenpYb0FCWk9MdUdXbVJabGRYZ3MwbWVFWVNSNHRaVVRObG5JSVZhCnZwUk41d3FjME5KTlhlWVZyTGM3d1RDSHFyQjVRMldYN2ZTMUxleTY5aTZHZW0zYlV6QUtRUWNaUUxyaHdkSGQKd2VoQlJ1dlBmM3Q1YVRGVzdrVFp4d0NhTngwYnAwMkd5YkFIbm5uOEN3a0tablJqQnlZWnhPalhZSXY5WG5xTApFaVhMK09hWUZLSXZwT3pMRVUxUTF5S0Z6L0J2V3Q5aXJMSmxFRnQ0K1g1QklTRzFjSVRzZTFNNkI5OHBNbTVQCnVxMFBMSHZZVVhEQXVvT0g3dlFCVUl0VXhESmRPdnlpS3FhTTdRT2NMMWU1OUhRUVM3SUR0M255TDNQeEdIa0gKVDRaa0lTTmE5K3duWGMvSUNvMWU0cnlFaGV3UHk4MGMKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+---
+# Source: harbor/templates/jobservice/jobservice-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "my-release-harbor-jobservice"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+  JOBSERVICE_SECRET: "ZjlqS1lpUHEyMkMzd0RtRA=="
+  REGISTRY_CREDENTIAL_PASSWORD: "aGFyYm9yX3JlZ2lzdHJ5X3Bhc3N3b3Jk"
+---
+# Source: harbor/templates/registry/registry-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "my-release-harbor-registry"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+  REGISTRY_HTTP_SECRET: "aGY3ZWRTdHplb0ZoZmVBbg=="
+  REGISTRY_REDIS_PASSWORD: ""
+---
+# Source: harbor/templates/registry/registry-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "my-release-harbor-registry-htpasswd"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+  REGISTRY_HTPASSWD: "aGFyYm9yX3JlZ2lzdHJ5X3VzZXI6JDJhJDEwJGtqLmVpejkvSkZmZmJVZDNpbkxIc09yUy53c25SZUlwVk1OaFgwU3RUbzlmYTJIR2suQlhx"
+---
+# Source: harbor/templates/registry/registryctl-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "my-release-harbor-registryctl"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+---
+# Source: harbor/templates/trivy/trivy-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-release-harbor-trivy
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+type: Opaque
+data:
+  redisURL: cmVkaXM6Ly9teS1yZWxlYXNlLWhhcmJvci1yZWRpczo2Mzc5LzU/aWRsZV90aW1lb3V0X3NlY29uZHM9MzA=
+  gitHubToken: ""
+---
+# Source: harbor/templates/core/core-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-release-harbor-core
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+data:
+  app.conf: |+
+    appname = Harbor
+    runmode = prod
+    enablegzip = true
+
+    [prod]
+    httpport = 8080
+  PORT: "8080"
+  DATABASE_TYPE: "postgresql"
+  POSTGRESQL_HOST: "my-release-harbor-database"
+  POSTGRESQL_PORT: "5432"
+  POSTGRESQL_USERNAME: "postgres"
+  POSTGRESQL_DATABASE: "registry"
+  POSTGRESQL_SSLMODE: "disable"
+  POSTGRESQL_MAX_IDLE_CONNS: "100"
+  POSTGRESQL_MAX_OPEN_CONNS: "900"
+  EXT_ENDPOINT: "https://homelab.dev"
+  CORE_URL: "http://my-release-harbor-core:80"
+  JOBSERVICE_URL: "http://my-release-harbor-jobservice"
+  REGISTRY_URL: "http://my-release-harbor-registry:5000"
+  TOKEN_SERVICE_URL: "http://my-release-harbor-core:80/service/token"
+  CORE_LOCAL_URL: "http://127.0.0.1:8080"
+  WITH_TRIVY: "true"
+  TRIVY_ADAPTER_URL: "http://my-release-harbor-trivy:8080"
+  REGISTRY_STORAGE_PROVIDER_NAME: "filesystem"
+  LOG_LEVEL: "info"
+  CONFIG_PATH: "/etc/core/app.conf"
+  CHART_CACHE_DRIVER: "redis"
+  _REDIS_URL_CORE: "redis://my-release-harbor-redis:6379/0?idle_timeout_seconds=30"
+  _REDIS_URL_REG: "redis://my-release-harbor-redis:6379/2?idle_timeout_seconds=30"  
+  PORTAL_URL: "http://my-release-harbor-portal"
+  REGISTRY_CONTROLLER_URL: "http://my-release-harbor-registry:8080"
+  REGISTRY_CREDENTIAL_USERNAME: "harbor_registry_user"
+  HTTP_PROXY: ""
+  HTTPS_PROXY: ""
+  NO_PROXY: "my-release-harbor-core,my-release-harbor-jobservice,my-release-harbor-database,my-release-harbor-registry,my-release-harbor-portal,my-release-harbor-trivy,my-release-harbor-exporter,127.0.0.1,localhost,.local,.internal"
+  PERMITTED_REGISTRY_TYPES_FOR_PROXY_CACHE: "docker-hub,harbor,azure-acr,ali-acr,aws-ecr,google-gcr,docker-registry,github-ghcr,jfrog-artifactory"
+  REPLICATION_ADAPTER_WHITELIST: "ali-acr,aws-ecr,azure-acr,docker-hub,docker-registry,github-ghcr,google-gcr,harbor,huawei-SWR,jfrog-artifactory,tencent-tcr,volcengine-cr"
+  QUOTA_UPDATE_PROVIDER: "db"
+---
+# Source: harbor/templates/jobservice/jobservice-cm-env.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "my-release-harbor-jobservice-env"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+data:
+  CORE_URL: "http://my-release-harbor-core:80"
+  TOKEN_SERVICE_URL: "http://my-release-harbor-core:80/service/token"
+  REGISTRY_URL: "http://my-release-harbor-registry:5000"
+  REGISTRY_CONTROLLER_URL: "http://my-release-harbor-registry:8080"
+  REGISTRY_CREDENTIAL_USERNAME: "harbor_registry_user"
+  REGISTRY_HTTP_CLIENT_TIMEOUT: "30"
+
+  JOBSERVICE_WEBHOOK_JOB_MAX_RETRY: "3"
+  JOBSERVICE_WEBHOOK_JOB_HTTP_CLIENT_TIMEOUT: "3"
+
+  LOG_LEVEL: "info"
+  HTTP_PROXY: ""
+  HTTPS_PROXY: ""
+  NO_PROXY: "my-release-harbor-core,my-release-harbor-jobservice,my-release-harbor-database,my-release-harbor-registry,my-release-harbor-portal,my-release-harbor-trivy,my-release-harbor-exporter,127.0.0.1,localhost,.local,.internal"
+---
+# Source: harbor/templates/jobservice/jobservice-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "my-release-harbor-jobservice"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+data:
+  config.yml: |+
+    #Server listening port
+    protocol: "http"
+    port: 8080
+    worker_pool:
+      workers: 10
+      backend: "redis"
+      redis_pool:
+        redis_url: "redis://my-release-harbor-redis:6379/1"
+        namespace: "harbor_job_service_namespace"
+        idle_timeout_second: 3600
+    job_loggers:
+      - name: "FILE"
+        level: INFO
+        settings: # Customized settings of logger
+          base_dir: "/var/log/jobs"
+        sweeper:
+          duration: 14 #days
+          settings: # Customized settings of sweeper
+            work_dir: "/var/log/jobs"
+    metric:
+      enabled: false
+      path: /metrics
+      port: 8001
+    #Loggers for the job service
+    loggers:
+      - name: "STD_OUTPUT"
+        level: INFO
+    reaper:
+      # the max time to wait for a task to finish, if unfinished after max_update_hours, the task will be mark as error, but the task will continue to run, default value is 24
+      max_update_hours: 24
+      # the max time for execution in running state without new task created
+      max_dangling_hours: 168
+---
+# Source: harbor/templates/portal/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "my-release-harbor-portal"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+data:
+  nginx.conf: |+
+    worker_processes auto;
+    pid /tmp/nginx.pid;
+    events {
+        worker_connections  1024;
+    }
+    http {
+        client_body_temp_path /tmp/client_body_temp;
+        proxy_temp_path /tmp/proxy_temp;
+        fastcgi_temp_path /tmp/fastcgi_temp;
+        uwsgi_temp_path /tmp/uwsgi_temp;
+        scgi_temp_path /tmp/scgi_temp;
+        server {
+            listen 8080;
+            listen [::]:8080;
+            server_name  localhost;
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+            include /etc/nginx/mime.types;
+            gzip on;
+            gzip_min_length 1000;
+            gzip_proxied expired no-cache no-store private auth;
+            gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+            location /devcenter-api-2.0 {
+                try_files $uri $uri/ /swagger-ui-index.html;
+            }
+            location / {
+                try_files $uri $uri/ /index.html;
+            }
+            location = /index.html {
+                add_header Cache-Control "no-store, no-cache, must-revalidate";
+            }
+        }
+    }
+---
+# Source: harbor/templates/registry/registry-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "my-release-harbor-registry"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+data:
+  config.yml: |+
+    version: 0.1
+    log:
+      level: info
+      fields:
+        service: registry
+    storage:
+      filesystem:
+        rootdirectory: /storage
+      cache:
+        layerinfo: redis
+      maintenance:
+        uploadpurging:
+          enabled: true
+          age: 168h
+          interval: 24h
+          dryrun: false
+      delete:
+        enabled: true
+      redirect:
+        disable: false
+    redis:
+      addr: my-release-harbor-redis:6379
+      db: 2
+      username: ""
+      password: ""
+      readtimeout: 10s
+      writetimeout: 10s
+      dialtimeout: 10s
+      enableTLS: false
+      pool:
+        maxidle: 100
+        maxactive: 500
+        idletimeout: 60s
+    http:
+      addr: :5000
+      relativeurls: false
+      # set via environment variable
+      # secret: placeholder
+      debug:
+        addr: localhost:5001
+    auth:
+      htpasswd:
+        realm: harbor-registry-basic-realm
+        path: /etc/registry/passwd
+    validation:
+      disabled: true
+    compatibility:
+      schema1:
+        enabled: true
+  ctl-config.yml: |+
+    ---
+    protocol: "http"
+    port: 8080
+    log_level: info
+    registry_config: "/etc/registry/config.yml"
+---
+# Source: harbor/templates/registry/registryctl-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "my-release-harbor-registryctl"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+data:
+---
+# Source: harbor/templates/jobservice/jobservice-pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: my-release-harbor-jobservice
+  namespace: "harbor"
+  annotations:
+    helm.sh/resource-policy: keep
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: jobservice
+    app.kubernetes.io/component: jobservice
+spec:
+  accessModes: 
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+# Source: harbor/templates/registry/registry-pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: my-release-harbor-registry
+  namespace: "harbor"
+  annotations:
+    helm.sh/resource-policy: keep
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: registry
+    app.kubernetes.io/component: registry
+spec:
+  accessModes: 
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Source: harbor/templates/core/core-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-release-harbor-core
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - name: http-web
+      port: 80
+      targetPort: 8080
+  selector:
+    release: my-release
+    app: "harbor"
+    component: core
+---
+# Source: harbor/templates/database/database-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: "my-release-harbor-database"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - port: 5432
+  selector:
+    release: my-release
+    app: "harbor"
+    component: database
+---
+# Source: harbor/templates/jobservice/jobservice-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: "my-release-harbor-jobservice"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - name: http-jobservice
+      port: 80
+      targetPort: 8080
+  selector:
+    release: my-release
+    app: "harbor"
+    component: jobservice
+---
+# Source: harbor/templates/portal/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: "my-release-harbor-portal"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    release: my-release
+    app: "harbor"
+    component: portal
+---
+# Source: harbor/templates/redis/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-release-harbor-redis
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - port: 6379
+  selector:
+    release: my-release
+    app: "harbor"
+    component: redis
+---
+# Source: harbor/templates/registry/registry-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: "my-release-harbor-registry"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - name: http-registry
+      port: 5000
+
+    - name: http-controller
+      port: 8080
+  selector:
+    release: my-release
+    app: "harbor"
+    component: registry
+---
+# Source: harbor/templates/trivy/trivy-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: "my-release-harbor-trivy"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+spec:
+  ports:
+    - name: http-trivy
+      protocol: TCP
+      port: 8080
+  selector:
+    release: my-release
+    app: "harbor"
+    component: trivy
+---
+# Source: harbor/templates/core/core-dpl.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-release-harbor-core
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: core
+    app.kubernetes.io/component: core
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: core
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: core
+        app.kubernetes.io/component: core
+      annotations:
+        checksum/configmap: 7689cba58c8ab4764b4bb58c92f1565a33c2703ac8e3abf5f1c19de618d7324f
+        checksum/secret: e2621dc4a7e70550efd7221536afcb81adf159879f6e45f8b70f0a713a0258ef
+        checksum/secret-jobservice: aa7f9f81aa7da04654ded19cbeebee4fa3e449956f40b1a9c8fa3696f5ece267
+    spec:
+      securityContext:
+        runAsUser: 10000
+        fsGroup: 10000
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 120
+      containers:
+      - name: core
+        image: docker.io/goharbor/harbor-core:v2.15.2
+        imagePullPolicy: IfNotPresent
+        startupProbe:
+          httpGet:
+            path: /api/v2.0/ping
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 360
+          successThreshold: 1
+        livenessProbe:
+          httpGet:
+            path: /api/v2.0/ping
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 2
+          successThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /api/v2.0/ping
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 2
+          successThreshold: 1
+        envFrom:
+        - configMapRef:
+            name: "my-release-harbor-core"
+        - secretRef:
+            name: "my-release-harbor-core"
+        env:
+          - name: CORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: my-release-harbor-core
+                key: secret
+          - name: JOBSERVICE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: my-release-harbor-jobservice
+                key: JOBSERVICE_SECRET
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/core/app.conf
+          subPath: app.conf
+        - name: secret-key
+          mountPath: /etc/core/key
+          subPath: key
+        - name: token-service-private-key
+          mountPath: /etc/core/private_key.pem
+          subPath: tls.key
+        - name: ca-download
+          mountPath: /etc/core/ca
+        - name: psc
+          mountPath: /etc/core/token
+      volumes:
+      - name: config
+        configMap:
+          name: my-release-harbor-core
+          items:
+            - key: app.conf
+              path: app.conf
+      - name: secret-key
+        secret:
+          secretName: my-release-harbor-core
+          items:
+            - key: secretKey
+              path: key
+      - name: token-service-private-key
+        secret:
+          secretName: my-release-harbor-core
+      - name: ca-download
+        secret:
+          secretName: "my-release-harbor-ingress"
+      - name: psc
+        emptyDir: {}
+---
+# Source: harbor/templates/jobservice/jobservice-dpl.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "my-release-harbor-jobservice"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: jobservice
+    app.kubernetes.io/component: jobservice
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: jobservice
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: jobservice
+        app.kubernetes.io/component: jobservice
+      annotations:
+        checksum/configmap: 4a4d5f345fa03ada5558b0c5553ba336926898d83d17fdf1597e680703b64754
+        checksum/configmap-env: 66f64c52bc8d2ece39056a7a935c01a6b4636ea5c169cb8130954f6eb747eaa6
+        checksum/secret: 00243d9e209e7f6cfcfd1b84a2cf56d86050510818d3fd6eed429531d8736b9c
+        checksum/secret-core: f01b011cf21e4adfbfa4b2c83da6dc94a581a575380acadcc78423e246a196e1
+    spec:
+      securityContext:
+        runAsUser: 10000
+        fsGroup: 10000
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 120
+      containers:
+      - name: jobservice
+        image: docker.io/goharbor/harbor-jobservice:v2.15.2
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /api/v1/stats
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /api/v1/stats
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        env:
+          - name: CORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: my-release-harbor-core
+                key: secret
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        envFrom:
+        - configMapRef:
+            name: "my-release-harbor-jobservice-env"
+        - secretRef:
+            name: "my-release-harbor-jobservice"
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: jobservice-config
+          mountPath: /etc/jobservice/config.yml
+          subPath: config.yml
+        - name: job-logs
+          mountPath: /var/log/jobs
+          subPath: 
+      volumes:
+      - name: jobservice-config
+        configMap:
+          name: "my-release-harbor-jobservice"
+      - name: job-logs
+        persistentVolumeClaim:
+          claimName: my-release-harbor-jobservice
+---
+# Source: harbor/templates/portal/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "my-release-harbor-portal"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: portal
+    app.kubernetes.io/component: portal
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: portal
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: portal
+        app.kubernetes.io/component: portal
+      annotations:
+        checksum/configmap: 4f1292185432fb747f0f4ff012a2e032b7a3b93eb9ac7bd79effff7dbe89aaab
+    spec:
+      securityContext:
+        runAsUser: 10000
+        fsGroup: 10000
+      automountServiceAccountToken: false
+      containers:
+      - name: portal
+        image: docker.io/goharbor/harbor-portal:v2.15.2
+        imagePullPolicy: IfNotPresent
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        livenessProbe:
+          httpGet:
+            path: /
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: portal-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+      volumes:
+      - name: portal-config
+        configMap:
+          name: "my-release-harbor-portal"
+---
+# Source: harbor/templates/registry/registry-dpl.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "my-release-harbor-registry"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: registry
+    app.kubernetes.io/component: registry
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: registry
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: registry
+        app.kubernetes.io/component: registry
+      annotations:
+        checksum/configmap: 9893cce7737735b8f65b401d18e06fe2ed79c5882c3b8555bd8bd74cb63dbebb
+        checksum/secret: 2a6e65ec07bc6be661c030fb82f9f24938d44daea8827995a06be4a052dee19f
+        checksum/secret-jobservice: 3de29dc4b9df87b0f363dac31974fdb8092be7419caca9ffe5d2885545fb134f
+        checksum/secret-core: f2ec36eb2b2d5306b05d24685fdfa36f58d691416b797552fd47a60ff2ab49ca
+    spec:
+      securityContext:
+        runAsUser: 10000
+        fsGroup: 10000
+        fsGroupChangePolicy: OnRootMismatch
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 120
+      containers:
+      - name: registry
+        image: docker.io/goharbor/registry-photon:v2.15.2
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /
+            scheme: HTTP
+            port: 5000
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /
+            scheme: HTTP
+            port: 5000
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        envFrom:
+        - secretRef:
+            name: "my-release-harbor-registry"
+        env:
+        ports:
+        - containerPort: 5000
+        - containerPort: 5001
+        volumeMounts:
+        - name: registry-data
+          mountPath: /storage
+          subPath: 
+        - name: registry-htpasswd
+          mountPath: /etc/registry/passwd
+          subPath: passwd
+        - name: registry-config
+          mountPath: /etc/registry/config.yml
+          subPath: config.yml
+      - name: registryctl
+        image: docker.io/goharbor/harbor-registryctl:v2.15.2
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            scheme: HTTP
+            port: 8080
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        envFrom:
+        - configMapRef:
+            name: "my-release-harbor-registryctl"
+        - secretRef:
+            name: "my-release-harbor-registry"
+        - secretRef:
+            name: "my-release-harbor-registryctl"
+        env:
+        - name: CORE_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: my-release-harbor-core
+              key: secret
+        - name: JOBSERVICE_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: my-release-harbor-jobservice
+              key: JOBSERVICE_SECRET
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: registry-data
+          mountPath: /storage
+          subPath: 
+        - name: registry-config
+          mountPath: /etc/registry/config.yml
+          subPath: config.yml
+        - name: registry-config
+          mountPath: /etc/registryctl/config.yml
+          subPath: ctl-config.yml
+      volumes:
+      - name: registry-htpasswd
+        secret:
+          secretName: my-release-harbor-registry-htpasswd
+          
+          items:
+            - key: REGISTRY_HTPASSWD
+              path: passwd
+      - name: registry-config
+        configMap:
+          name: "my-release-harbor-registry"
+      - name: registry-data
+        persistentVolumeClaim:
+          claimName: my-release-harbor-registry
+---
+# Source: harbor/templates/database/database-ss.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "my-release-harbor-database"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: database
+    app.kubernetes.io/component: database
+spec:
+  replicas: 1
+  serviceName: "my-release-harbor-database"
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: database
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: database
+        app.kubernetes.io/component: database
+      annotations:
+        checksum/secret: 7544dc8af4de947b524999371834c412c2df0b8ecfa4e1d952da48712feb0d68
+    spec:
+      securityContext:
+        runAsUser: 999
+        fsGroup: 999
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 120
+      initContainers:
+      # with "fsGroup" set, each time a volume is mounted, Kubernetes must recursively chown() and chmod() all the files and directories inside the volume
+      # this causes the postgresql reports the "data directory /var/lib/postgresql/data/pgdata has group or world access" issue when using some CSIs e.g. Ceph
+      # use this init container to correct the permission
+      # as "fsGroup" applied before the init container running, the container has enough permission to execute the command
+      - name: "data-permissions-ensurer"
+        image: docker.io/goharbor/harbor-db:v2.15.2
+        imagePullPolicy: IfNotPresent
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        command: ["/bin/sh"]
+        args: ["-c", "chmod -R 700 /var/lib/postgresql/data/pgdata || true"]
+        volumeMounts:
+          - name: database-data
+            mountPath: /var/lib/postgresql/data
+            subPath: 
+      containers:
+      - name: database
+        image: docker.io/goharbor/harbor-db:v2.15.2
+        imagePullPolicy: IfNotPresent
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        livenessProbe:
+          exec:
+            command:
+            - /docker-healthcheck.sh
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          exec:
+            command:
+            - /docker-healthcheck.sh
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        envFrom:
+          - secretRef:
+              name: "my-release-harbor-database"
+        env:
+          # put the data into a sub directory to avoid the permission issue in k8s with restricted psp enabled
+          # more detail refer to https://github.com/goharbor/harbor-helm/issues/756
+          - name: PGDATA
+            value: "/var/lib/postgresql/data/pgdata"
+        volumeMounts:
+        - name: database-data
+          mountPath: /var/lib/postgresql/data
+          subPath: 
+        - name: shm-volume
+          mountPath: /dev/shm
+      volumes:
+      - name: shm-volume
+        emptyDir:
+          medium: Memory
+          sizeLimit: 512Mi
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: "database-data"
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+      annotations:
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: "1Gi"
+---
+# Source: harbor/templates/redis/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-release-harbor-redis
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: redis
+    app.kubernetes.io/component: redis
+spec:
+  replicas: 1
+  serviceName: my-release-harbor-redis
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: redis
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: redis
+        app.kubernetes.io/component: redis
+    spec:
+      securityContext:
+        runAsUser: 999
+        fsGroup: 999
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 120
+      containers:
+      - name: redis
+        image: docker.io/goharbor/valkey-photon:v2.15.2
+        imagePullPolicy: IfNotPresent
+        securityContext: 
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        livenessProbe:
+          tcpSocket:
+            port: 6379
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        readinessProbe:
+          tcpSocket:
+            port: 6379
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+          successThreshold: 1
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/redis
+          subPath: 
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: data
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+      annotations:
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: "1Gi"
+---
+# Source: harbor/templates/trivy/trivy-sts.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-release-harbor-trivy
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+    component: trivy
+    app.kubernetes.io/component: trivy
+spec:
+  replicas: 1
+  serviceName: my-release-harbor-trivy
+  selector:
+    matchLabels:
+      release: my-release
+      app: "harbor"
+      component: trivy
+  template:
+    metadata:
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/name: harbor
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: harbor
+        app.kubernetes.io/version: "2.15.2"
+        component: trivy
+        app.kubernetes.io/component: trivy
+      annotations:
+        checksum/secret: deff748821c43ee01d2447615522354f0f8c226d7172d0d421fd318b0e749e2a
+    spec:
+      securityContext:
+        runAsUser: 10000
+        fsGroup: 10000
+      automountServiceAccountToken: false
+      containers:
+        - name: trivy
+          image: docker.io/goharbor/trivy-adapter-photon:v2.15.2
+          imagePullPolicy: IfNotPresent
+          securityContext: 
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            privileged: false
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+          env:
+            - name: HTTP_PROXY
+              value: ""
+            - name: HTTPS_PROXY
+              value: ""
+            - name: NO_PROXY
+              value: "my-release-harbor-core,my-release-harbor-jobservice,my-release-harbor-database,my-release-harbor-registry,my-release-harbor-portal,my-release-harbor-trivy,my-release-harbor-exporter,127.0.0.1,localhost,.local,.internal"
+            - name: "SCANNER_LOG_LEVEL"
+              value: "info"
+            - name: "SCANNER_TRIVY_CACHE_DIR"
+              value: "/home/scanner/.cache/trivy"
+            - name: "SCANNER_TRIVY_REPORTS_DIR"
+              value: "/home/scanner/.cache/reports"
+            - name: "SCANNER_TRIVY_DEBUG_MODE"
+              value: "false"
+            - name: "SCANNER_TRIVY_VULN_TYPE"
+              value: "os,library"
+            - name: "SCANNER_TRIVY_TIMEOUT"
+              value: "5m0s"
+            - name: "SCANNER_TRIVY_GITHUB_TOKEN"
+              valueFrom:
+                secretKeyRef:
+                  name: my-release-harbor-trivy
+                  key: gitHubToken
+            - name: "SCANNER_TRIVY_SEVERITY"
+              value: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
+            - name: "SCANNER_TRIVY_IGNORE_UNFIXED"
+              value: "false"
+            - name: "SCANNER_TRIVY_SKIP_UPDATE"
+              value: "false"
+            - name: "SCANNER_TRIVY_SKIP_JAVA_DB_UPDATE"
+              value: "false"
+            - name: "SCANNER_TRIVY_DB_REPOSITORY"
+              value: "mirror.gcr.io/aquasec/trivy-db,ghcr.io/aquasecurity/trivy-db"
+            - name: "SCANNER_TRIVY_JAVA_DB_REPOSITORY"
+              value: "mirror.gcr.io/aquasec/trivy-java-db,ghcr.io/aquasecurity/trivy-java-db"
+            - name: "SCANNER_TRIVY_OFFLINE_SCAN"
+              value: "false"
+            - name: "SCANNER_TRIVY_SECURITY_CHECKS"
+              value: "vuln"
+            - name: "SCANNER_TRIVY_INSECURE"
+              value: "false"
+            - name: SCANNER_API_SERVER_ADDR
+              value: ":8080"
+            - name: "SCANNER_REDIS_URL"
+              valueFrom:
+                secretKeyRef:
+                  name: my-release-harbor-trivy
+                  key: redisURL
+            - name: "SCANNER_STORE_REDIS_URL"
+              valueFrom:
+                secretKeyRef:
+                  name: my-release-harbor-trivy
+                  key: redisURL
+            - name: "SCANNER_JOB_QUEUE_REDIS_URL"
+              valueFrom:
+                secretKeyRef:
+                  name: my-release-harbor-trivy
+                  key: redisURL
+          ports:
+            - name: api-server
+              containerPort: 8080
+          volumeMounts:
+          - name: data
+            mountPath: /home/scanner/.cache
+            subPath: 
+            readOnly: false
+          livenessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /probe/healthy
+              port: api-server
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 10
+            successThreshold: 1
+          readinessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /probe/ready
+              port: api-server
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 3
+            successThreshold: 1
+          resources:
+            limits:
+              cpu: 1
+              memory: 1Gi
+            requests:
+              cpu: 200m
+              memory: 512Mi
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: data
+      labels:
+        heritage: Helm
+        release: my-release
+        chart: harbor
+        app: "harbor"
+      annotations:
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: "5Gi"
+---
+# Source: harbor/templates/ingress/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "my-release-harbor-ingress"
+  namespace: "harbor"
+  labels:
+    heritage: Helm
+    release: my-release
+    chart: harbor
+    app: "harbor"
+    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/name: harbor
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: harbor
+    app.kubernetes.io/version: "2.15.2"
+  annotations:
+    ingress.kubernetes.io/proxy-body-size: "0"
+    ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+  - secretName: my-release-harbor-ingress
+    hosts:
+    - homelab.dev
+  rules:
+  - http:
+      paths:
+      - path: /api/
+        pathType: Prefix
+        backend:
+          service:
+            name: my-release-harbor-core
+            port:
+              number: 80
+      - path: /service/
+        pathType: Prefix
+        backend:
+          service:
+            name: my-release-harbor-core
+            port:
+              number: 80
+      - path: /v2/
+        pathType: Prefix
+        backend:
+          service:
+            name: my-release-harbor-core
+            port:
+              number: 80
+      - path: /c/
+        pathType: Prefix
+        backend:
+          service:
+            name: my-release-harbor-core
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-release-harbor-portal
+            port:
+              number: 80
+    host: homelab.dev

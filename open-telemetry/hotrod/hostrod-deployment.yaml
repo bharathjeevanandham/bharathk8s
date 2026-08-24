@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-hotrod
+  namespace: otel-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-hotrod
+  template:
+    metadata:
+      labels:
+        app: example-hotrod
+    spec:
+      containers:
+        - name: hotrod
+          image: jaegertracing/example-hotrod:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://otel-collector.otel-demo.svc.cluster.local:4317"
+            - name: OTEL_EXPORTER_OTLP_PROTOCOL
+              value: "grpc"
+            - name: OTEL_SERVICE_NAME
+              value: "hotrod"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-hotrod
+  namespace: otel-demo
+spec:
+  selector:
+    app: example-hotrod
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+

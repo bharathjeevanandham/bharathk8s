@@ -1,0 +1,31 @@
+NAME: otel-demo
+LAST DEPLOYED: Sun Aug 16 10:53:36 2026
+NAMESPACE: otel-demo
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+=======================================================================================
+
+
+ ██████╗ ████████╗███████╗██╗         ██████╗ ███████╗███╗   ███╗ ██████╗
+██╔═══██╗╚══██╔══╝██╔════╝██║         ██╔══██╗██╔════╝████╗ ████║██╔═══██╗
+██║   ██║   ██║   █████╗  ██║         ██║  ██║█████╗  ██╔████╔██║██║   ██║
+██║   ██║   ██║   ██╔══╝  ██║         ██║  ██║██╔══╝  ██║╚██╔╝██║██║   ██║
+╚██████╔╝   ██║   ███████╗███████╗    ██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝
+ ╚═════╝    ╚═╝   ╚══════╝╚══════╝    ╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝
+
+
+- All services are available via the Frontend proxy: http://localhost:8080
+  by running these commands:
+     kubectl --namespace otel-demo port-forward svc/frontend-proxy 8080:8080
+
+  The following services are available at these paths after the frontend-proxy service is exposed with port forwarding:
+  Demo UI                    http://localhost:8080/
+  Chat with an agent         http://localhost:8080/chatbot/
+  Telemetry Documentation    http://localhost:8080/telemetry/
+  Jaeger UI                  http://localhost:8080/jaeger/ui/
+  Firepit (Profiles)         http://localhost:8080/profiles/
+  Grafana                    http://localhost:8080/grafana/
+  Feature Flags UI           http://localhost:8080/feature/
+
